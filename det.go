@@ -1,6 +1,6 @@
 package math
 
-import "robust"
+import "github.com/intdxdt/robust"
 
 //Det2 computes the determinant of 2x2 matrix
 func Det2(mat2x2 [][]float64) float64 {
