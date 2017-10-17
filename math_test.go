@@ -23,6 +23,10 @@ func TestFloat(t *testing.T) {
 	y := 0.2
 	z := x + y
 	g.Describe("FloatEqual", func() {
+		g.It("consts", func() {
+			g.Assert(PRECISION).Equal(12)
+			g.Assert(EPSILON).Equal(1e-12)
+		})
 		g.It("strfloat", func() {
 			g.Assert(FloatToString(2740278.8823960135)).Equal("2740278.8823960135")
 		})
