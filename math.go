@@ -5,11 +5,12 @@ import (
 )
 
 const (
-	EPSILON  = 1.0e-12
-	Pi       = math.Pi
-	Tau      = 2.0 * Pi
-	Sqrt2    = math.Sqrt2
-	E        = math.E
+	PRECISION = 12
+	EPSILON   = 1.0e-12
+	Pi        = math.Pi
+	Tau       = 2.0 * Pi
+	Sqrt2     = math.Sqrt2
+	E         = math.E
 )
 
 const (
