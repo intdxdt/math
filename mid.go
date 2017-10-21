@@ -1,6 +1,6 @@
 package math
 
-//Mid2D computes the midean coordinates
+//Mid2D computes the mid coordinates
 func Mid2D(a, b []float64) []float64 {
     return []float64{Mid(a[x], b[x]), Mid(a[y], b[y]), }
 }
