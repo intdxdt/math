@@ -34,7 +34,7 @@ func FloatEqual(a, b float64, epsilon ...float64) bool {
 //	Floor(±0) = ±0
 //	Floor(±Inf) = ±Inf
 //	Floor(NaN) = NaN
-func Floor(x float64) float64{
+func Floor(x float64) float64 {
 	return math.Floor(x)
 }
 
@@ -44,7 +44,7 @@ func Floor(x float64) float64{
 //	Ceil(±0) = ±0
 //	Ceil(±Inf) = ±Inf
 //	Ceil(NaN) = NaN
-func Ceil(x float64) float64{
+func Ceil(x float64) float64 {
 	return math.Ceil(x)
 }
 
@@ -54,13 +54,18 @@ func Ceil(x float64) float64{
 //	Trunc(±0) = ±0
 //	Trunc(±Inf) = ±Inf
 //	Trunc(NaN) = NaN
-func Trunc(x float64) float64{
+func Trunc(x float64) float64 {
 	return math.Trunc(x)
 }
 
 // NaN returns an IEEE 754 ``not-a-number'' value.
 func NaN() float64 {
 	return math.NaN()
+}
+
+// Pow returns x**y, the base-x exponential of y.
+func Pow(x, y float64) float64 {
+	return math.Pow(x, y)
 }
 
 // IsNaN reports whether f is an IEEE 754 ``not-a-number'' value.
