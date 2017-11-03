@@ -3,18 +3,19 @@ package math
 import (
 	"math"
 )
+//@formatter:off
 
 //Float_equal compare the equality of floats
 //Ref: http://floating-point-gui.de/errors/comparison/
 //compare floating point precision
 func FloatEqual(a, b float64, epsilon ...float64) bool {
-	eps := EPSILON
+	var eps = EPSILON
 	if len(epsilon) > 0 {
 		eps = epsilon[0]
 	}
-	absA := math.Abs(a)
-	absB := math.Abs(b)
-	diff := math.Abs(a - b)
+	var diff = a - b
+	if diff < 0 {diff  = -diff}
+	if diff == 0 {diff = 0} //-0
 
 	if a == b {
 		// shortcut, handles infinities
@@ -24,8 +25,11 @@ func FloatEqual(a, b float64, epsilon ...float64) bool {
 		// relative error is less meaningful here
 		return diff < eps || diff < (eps*eps)
 	}
+	if a < 0 {a = -a}
+	if b < 0 {b = -b}
+
 	// use relative error
-	return diff/math.Min(absA+absB, math.MaxFloat64) < eps
+	return diff/math.Min(a+b, math.MaxFloat64) < eps
 }
 
 // Floor returns the greatest integer value less than or equal to x.
