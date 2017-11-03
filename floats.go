@@ -25,6 +25,7 @@ func FloatEqual(a, b float64, epsilon ...float64) bool {
 		// relative error is less meaningful here
 		return diff < eps || diff < (eps*eps)
 	}
+
 	if a < 0 {a = -a}
 	if b < 0 {b = -b}
 
