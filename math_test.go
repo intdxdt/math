@@ -38,7 +38,7 @@ func TestFloat(t *testing.T) {
 			g.Assert(FloatEqual(math.Inf(1), math.Inf(1))).IsTrue()
 			g.Assert(FloatEqual(math.Inf(-1), math.Inf(-1))).IsTrue()
 			g.Assert(FloatEqual(math.MaxFloat64, math.MaxFloat64-1e100)).IsTrue()
-			g.Assert(FloatEqual(0.1+0.2, 0.3, 1e-12)).IsTrue()
+			g.Assert(FloatEqual(0.1+0.2, 0.3)).IsTrue()
 			g.Assert(FloatEqual(0.3, 0.3)).IsTrue()
 			g.Assert(FloatEqual(0., -0.)).IsTrue()
 			g.Assert(FloatEqual(-0., 0.)).IsTrue()

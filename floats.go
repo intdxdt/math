@@ -3,34 +3,39 @@ package math
 import (
 	"math"
 )
+
 //@formatter:off
 
 //Float_equal compare the equality of floats
 //Ref: http://floating-point-gui.de/errors/comparison/
 //compare floating point precision
-func FloatEqual(a, b float64, epsilon ...float64) bool {
-	var eps = EPSILON
-	if len(epsilon) > 0 {
-		eps = epsilon[0]
-	}
-	var diff = a - b
-	if diff < 0 {diff  = -diff}
-	if diff == 0 {diff = 0} //-0
-
-	if a == b {
-		// shortcut, handles infinities
-		return true
-	} else if a == 0 || b == 0 || diff < eps {
-		// a or b is zero or both are extremely close to it
-		// relative error is less meaningful here
-		return diff < eps || diff < (eps*eps)
-	}
-
-	if a < 0 {a = -a}
-	if b < 0 {b = -b}
-
-	// use relative error
-	return diff/math.Min(a+b, math.MaxFloat64) < eps
+func FloatEqual(a, b float64) bool {
+	//var eps = EPSILON
+	//if len(epsilon) > 0 {
+	//	eps = epsilon[0]
+	//}
+	//if a == b {
+	//	// shortcut, handles infinities
+	//	return true
+	//}
+	//var diff = a - b
+	//if diff < 0 {diff  = -diff}
+	//if diff == 0 {diff = 0} //-0
+	return a == b || math.Abs(a - b) < EPSILON
+	//if a == b {
+	//	// shortcut, handles infinities
+	//	return true
+	//} else if a == 0 || b == 0 || diff < eps {
+	//	// a or b is zero or both are extremely close to it
+	//	// relative error is less meaningful here
+	//	return diff < eps || diff < (eps*eps)
+	//}
+	//
+	//if a < 0 {a = -a}
+	//if b < 0 {b = -b}
+	//
+	//// use relative error
+	//return diff/math.Min(a+b, math.MaxFloat64) < eps
 }
 
 // Floor returns the greatest integer value less than or equal to x.
