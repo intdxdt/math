@@ -3,7 +3,6 @@ package math
 import "math"
 
 // Sqrt returns the square root of x.
-//
 // Special cases are:
 //	Sqrt(+Inf) = +Inf
 //	Sqrt(±0) = ±0

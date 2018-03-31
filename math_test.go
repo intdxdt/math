@@ -102,6 +102,10 @@ func TestFloat(t *testing.T) {
 			g.Assert(Sin(2*Pi) < -2.44e-16).IsTrue()
 
 			g.Assert(Hypot(3, 4) == 5.0).IsTrue()
+			g.Assert(Hypot2(3, 4) == 25.0).IsTrue()
+			g.Assert(math.IsInf(Hypot2(3, math.Inf(1)),1)).IsTrue()
+			g.Assert(math.IsInf(Hypot2(3, math.Inf(-1)), 1)).IsTrue()
+			g.Assert(math.IsNaN(Hypot2(3, math.NaN()))).IsTrue()
 			g.Assert(Atan2(90, 15)-1.4056476493802699 < 1e-12).IsTrue()
 			g.Assert(Sqrt(9) == 3).IsTrue()
 			g.Assert(Sqrt(2) == Sqrt2).IsTrue()
@@ -135,16 +139,13 @@ func TestSum(t *testing.T) {
 	s := 5050
 	g.Describe("Sum", func() {
 		g.It("sum  from int 1..100 ", func() {
-			_l1 := l1[:]
-			g.Assert(SumInt(&_l1)).Equal(s)
+			g.Assert(SumInt(l1[:])).Equal(s)
 		})
 		g.It("sum  from int64 1..100 ", func() {
-			_l2 := l2[:]
-			g.Assert(SumI64(&_l2)).Equal(int64(s))
+			g.Assert(SumI64(l2[:])).Equal(int64(s))
 		})
 		g.It("sum  from float64 1..100 ", func() {
-			_l3 := l3[:]
-			g.Assert(SumF64(&_l3)).Equal(float64(s))
+			g.Assert(SumF64(l3[:])).Equal(float64(s))
 		})
 	})
 }

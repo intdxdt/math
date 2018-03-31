@@ -3,7 +3,6 @@ package math
 import "math"
 
 // Cos returns the cosine of the radian argument x.
-//
 // Special cases are:
 //	Cos(±Inf) = NaN
 //	Cos(NaN) = NaN
@@ -49,12 +48,27 @@ func Atan2(y, x float64) float64 {
 
 // Hypot returns Sqrt(p*p + q*q), taking care to avoid
 // unnecessary overflow and underflow.
-//
 // Special cases are:
-//	Hypot(±Inf, q) = +Inf
-//	Hypot(p, ±Inf) = +Inf
-//	Hypot(NaN, q) = NaN
-//	Hypot(p, NaN) = NaN
+//  Hypot(±Inf, q) = +Inf
+//  Hypot(p, ±Inf) = +Inf
+//  Hypot(NaN, q) = NaN
+//  Hypot(p, NaN) = NaN
 func Hypot(p, q float64) float64 {
 	return math.Hypot(p, q)
+}
+
+// Hypot square of hypotenuse, can overflow
+// Special cases are:
+//  Hypot(±Inf, q) = +Inf
+//  Hypot(p, ±Inf) = +Inf
+//  Hypot(NaN, q) = NaN
+//  Hypot(p, NaN) = NaN
+func Hypot2(p, q float64) float64 {
+	switch {
+	case IsInf(p, 0) || IsInf(q, 0):
+		return Inf(1)
+	case IsNaN(p) || IsNaN(q):
+		return NaN()
+	}
+	return (p * p) + (q * q)
 }
