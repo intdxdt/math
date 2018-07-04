@@ -8,7 +8,7 @@ import "math"
 //	Min(x, -Inf) = Min(-Inf, x) = -Inf
 //	Min(x, NaN) = Min(NaN, x) = NaN
 //	Min(-0, ±0) = Min(±0, -0) = -0
-func MinF64(x, y float64) float64{
+func MinF64(x, y float64) float64 {
 	return math.Min(x, y)
 }
 
@@ -19,34 +19,38 @@ func MinF64(x, y float64) float64{
 //	Max(x, NaN) = Max(NaN, x) = NaN
 //	Max(+0, ±0) = Max(±0, +0) = +0
 //	Max(-0, -0) = -0
-func MaxF64(x, y float64) float64{
+func MaxF64(x, y float64) float64 {
 	return math.Max(x, y)
 }
 
 func MinI64(x, y int64) int64 {
-    if y < x {
-        return y
-    }
-    return x
+	var r = x
+	if y < x {
+		r = y
+	}
+	return r
 }
 
 func MaxI64(x, y int64) int64 {
-    if y > x {
-        return y
-    }
-    return x
+	var r = x
+	if y > x {
+		r = y
+	}
+	return r
 }
 
 func MinInt(x, y int) int {
-    if y < x {
-        return y
-    }
-    return x
+	var r = x
+	if y < x {
+		r = y
+	}
+	return r
 }
 
 func MaxInt(x, y int) int {
-    if y > x {
-        return y
-    }
-    return x
+	var r = x
+	if y > x {
+		r = y
+	}
+	return r
 }
