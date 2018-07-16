@@ -92,6 +92,12 @@ func TestFloat(t *testing.T) {
 			g.Assert(Log10(1000000000) == 9.0).IsTrue()
 
 		})
+		g.It("pow", func() {
+			g.Assert(Pow(2, 3) == 8).IsTrue()
+			g.Assert(Pow10(3) == 1000).IsTrue()
+			g.Assert(Pow10(-2) == 0.01).IsTrue()
+			g.Assert(Pow10(2) == 1024).IsFalse()
+		})
 		g.It("trig", func() {
 			g.Assert(Cos(Pi) == -1).IsTrue()
 			g.Assert(Cos(Pi/2.0) < 1.e-16).IsTrue()

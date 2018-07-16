@@ -73,18 +73,6 @@ func NaN() float64 {
 	return math.NaN()
 }
 
-// Pow returns x**y, the base-x exponential of y.
-func Pow(x, y float64) float64 {
-	return math.Pow(x, y)
-}
-
-// Pow10 returns 10**n, the base-10 exponential of n.
-// Special cases are:
-//	Pow10(n) =    0 for n < -323
-//	Pow10(n) = +Inf for n > 308
-func Pow10(n int) float64 {
-	return math.Pow10(n)
-}
 
 // IsNaN reports whether f is an IEEE 754 ``not-a-number'' value.
 func IsNaN(f float64) bool {
