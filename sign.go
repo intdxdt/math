@@ -15,6 +15,6 @@ func Sign(n float64) float64 {
 func SignOfDet2(x1, y1, x2, y2 float64) int {
 	// returns -1 if the determinant is negative,
 	// returns  1 if the determinant is positive,
-	// retunrs  0 if the determinant is null.
+	// returns  0 if the determinant is null.
 	return int(Sign(Det2([][]float64{{x1, y1}, {x2, y2}})))
 }

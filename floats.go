@@ -21,7 +21,7 @@ func FloatEqual(a, b float64) bool {
 	//var diff = a - b
 	//if diff < 0 {diff  = -diff}
 	//if diff == 0 {diff = 0} //-0
-	return a == b || math.Abs(a - b) < EPSILON
+	return a == b || Abs(a - b) < EPSILON
 	//if a == b {
 	//	// shortcut, handles infinities
 	//	return true
