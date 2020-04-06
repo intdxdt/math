@@ -1,9 +1,9 @@
 package math
 
 import (
-	"testing"
 	"github.com/franela/goblin"
 	"math"
+	"testing"
 )
 
 const precision = 8
@@ -109,7 +109,7 @@ func TestFloat(t *testing.T) {
 
 			g.Assert(Hypot(3, 4) == 5.0).IsTrue()
 			g.Assert(Hypot2(3, 4) == 25.0).IsTrue()
-			g.Assert(math.IsInf(Hypot2(3, math.Inf(1)),1)).IsTrue()
+			g.Assert(math.IsInf(Hypot2(3, math.Inf(1)), 1)).IsTrue()
 			g.Assert(math.IsInf(Hypot2(3, math.Inf(-1)), 1)).IsTrue()
 			g.Assert(math.IsNaN(Hypot2(3, math.NaN()))).IsTrue()
 			g.Assert(Atan2(90, 15)-1.4056476493802699 < 1e-12).IsTrue()
