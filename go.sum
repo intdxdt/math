@@ -1,5 +1,7 @@
 github.com/franela/goblin v0.0.0-20200404164657-567a4070c437 h1:xwZofahjU6dndU6xXbPmdhOBAB04RIEhlUmdlBvBcIs=
 github.com/franela/goblin v0.0.0-20200404164657-567a4070c437/go.mod h1:VzmDKDJVZI3aJmnRI9VjAn9nJ8qPPsN1fqzr9dqInIo=
+github.com/franela/goblin v0.0.0-20211003143422-0a4f594942bf h1:NrF81UtW8gG2LBGkXFQFqlfNnvMt9WdB46sfdJY4oqc=
+github.com/franela/goblin v0.0.0-20211003143422-0a4f594942bf/go.mod h1:VzmDKDJVZI3aJmnRI9VjAn9nJ8qPPsN1fqzr9dqInIo=
 github.com/intdxdt/dbits v0.0.0-20171026062838-f7e9caad92f4 h1:JtTERsC6K14AQmJmveJBi8iaLzxmGzgKmQjwYKgue6I=
 github.com/intdxdt/dbits v0.0.0-20171026062838-f7e9caad92f4/go.mod h1:GLKbRshq9XwOsyiyfx2vRXbKAeDBwo8uNb6pLPDipr4=
 github.com/intdxdt/robust v0.0.0-20180605033432-38456944e01f h1:6CoBLlwnhyrNbrDCq0qX5cMlrradKFoOsF/P6qxkVbQ=
