@@ -115,8 +115,15 @@ func TestFloat(t *testing.T) {
 			g.Assert(Atan2(90, 15)-1.4056476493802699 < 1e-12).IsTrue()
 			g.Assert(Sqrt(9) == 3).IsTrue()
 			g.Assert(Sqrt(2) == Sqrt2).IsTrue()
-
 		})
+
+		g.It("avg", func() {
+			var vals = []float64{2, 3, 1, 5.6, 2, 8, 9.8, 6.7, 9, 3, 5, 7}
+			var v = SumF64(vals) / float64(len(vals))
+			g.Assert(Average(vals...)).Equal(v)
+			g.Assert(Average()).Equal(0.0)
+		})
+
 	})
 
 }
