@@ -1,9 +1,9 @@
 package math
 
-func Average(vals ...float64) float64 {
-	var n = len(vals)
+func Average[T Num](values ...T) T {
+	var n = len(values)
 	if n == 0 {
 		return 0
 	}
-	return SumF64(vals) / float64(n)
+	return Sum(values) / T(n)
 }

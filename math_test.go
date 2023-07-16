@@ -48,29 +48,29 @@ func TestFloat(t *testing.T) {
 			g.Assert(FloatEqual(z-0.3, 0.0)).IsTrue()
 		})
 		g.It("float comparison", func() {
-			g.Assert(MinF64(0.3, 0.3)).Equal(0.3)
-			g.Assert(MinF64(0.2, 0.3)).Equal(0.2)
-			g.Assert(MinF64(0.2, -0.3)).Equal(-0.3)
+			g.Assert(Min(0.3, 0.3)).Equal(0.3)
+			g.Assert(Min(0.2, 0.3)).Equal(0.2)
+			g.Assert(Min(0.2, -0.3)).Equal(-0.3)
 
-			g.Assert(MaxF64(0.3, 0.3)).Equal(0.3)
-			g.Assert(MaxF64(0.2, 0.3)).Equal(0.3)
-			g.Assert(MaxF64(0.2, -0.3)).Equal(0.2)
+			g.Assert(Max(0.3, 0.3)).Equal(0.3)
+			g.Assert(Max(0.2, 0.3)).Equal(0.3)
+			g.Assert(Max(0.2, -0.3)).Equal(0.2)
 
-			g.Assert(MinI64(3, 3)).Equal(int64(3))
-			g.Assert(MinI64(2, 3)).Equal(int64(2))
-			g.Assert(MinI64(2, -3)).Equal(int64(-3))
+			g.Assert(Min[int64](3, 3)).Equal(int64(3))
+			g.Assert(Min[int64](2, 3)).Equal(int64(2))
+			g.Assert(Min[int64](2, -3)).Equal(int64(-3))
 
-			g.Assert(MaxI64(3, 3)).Equal(int64(3))
-			g.Assert(MaxI64(2, 3)).Equal(int64(3))
-			g.Assert(MaxI64(2, -3)).Equal(int64(2))
+			g.Assert(Max[int64](3, 3)).Equal(int64(3))
+			g.Assert(Max[int64](2, 3)).Equal(int64(3))
+			g.Assert(Max[int64](2, -3)).Equal(int64(2))
 
-			g.Assert(MinInt(3, 3)).Equal(3)
-			g.Assert(MinInt(2, 3)).Equal(2)
-			g.Assert(MinInt(2, -3)).Equal(-3)
+			g.Assert(Min(3, 3)).Equal(3)
+			g.Assert(Min(2, 3)).Equal(2)
+			g.Assert(Min(2, -3)).Equal(-3)
 
-			g.Assert(MaxInt(3, 3)).Equal(3)
-			g.Assert(MaxInt(2, 3)).Equal(3)
-			g.Assert(MaxInt(2, -3)).Equal(2)
+			g.Assert(Max(3, 3)).Equal(3)
+			g.Assert(Max(2, 3)).Equal(3)
+			g.Assert(Max(2, -3)).Equal(2)
 
 		})
 
@@ -119,9 +119,9 @@ func TestFloat(t *testing.T) {
 
 		g.It("avg", func() {
 			var vals = []float64{2, 3, 1, 5.6, 2, 8, 9.8, 6.7, 9, 3, 5, 7}
-			var v = SumF64(vals) / float64(len(vals))
+			var v = Sum(vals) / float64(len(vals))
 			g.Assert(Average(vals...)).Equal(v)
-			g.Assert(Average()).Equal(0.0)
+			g.Assert(Average[float64]()).Equal(0.0)
 		})
 
 	})
@@ -152,13 +152,13 @@ func TestSum(t *testing.T) {
 	s := 5050
 	g.Describe("Sum", func() {
 		g.It("sum  from int 1..100 ", func() {
-			g.Assert(SumInt(l1[:])).Equal(s)
+			g.Assert(Sum(l1[:])).Equal(s)
 		})
 		g.It("sum  from int64 1..100 ", func() {
-			g.Assert(SumI64(l2[:])).Equal(int64(s))
+			g.Assert(Sum(l2[:])).Equal(int64(s))
 		})
 		g.It("sum  from float64 1..100 ", func() {
-			g.Assert(SumF64(l3[:])).Equal(float64(s))
+			g.Assert(Sum(l3[:])).Equal(float64(s))
 		})
 	})
 }

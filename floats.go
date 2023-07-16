@@ -6,9 +6,9 @@ import (
 
 //@formatter:off
 
-//Float_equal compare the equality of floats
-//Ref: http://floating-point-gui.de/errors/comparison/
-//compare floating point precision
+// FloatEqual compare the equality of floats
+// Ref: http://floating-point-gui.de/errors/comparison/
+// compare floating point precision
 func FloatEqual(a, b float64) bool {
 	//var eps = EPSILON
 	//if len(epsilon) > 0 {
@@ -21,7 +21,7 @@ func FloatEqual(a, b float64) bool {
 	//var diff = a - b
 	//if diff < 0 {diff  = -diff}
 	//if diff == 0 {diff = 0} //-0
-	return a == b || Abs(a - b) < EPSILON
+	return a == b || Abs(a-b) < EPSILON
 	//if a == b {
 	//	// shortcut, handles infinities
 	//	return true
@@ -41,6 +41,7 @@ func FloatEqual(a, b float64) bool {
 // Floor returns the greatest integer value less than or equal to x.
 //
 // Special cases are:
+//
 //	Floor(±0) = ±0
 //	Floor(±Inf) = ±Inf
 //	Floor(NaN) = NaN
@@ -51,6 +52,7 @@ func Floor(x float64) float64 {
 // Ceil returns the least integer value greater than or equal to x.
 //
 // Special cases are:
+//
 //	Ceil(±0) = ±0
 //	Ceil(±Inf) = ±Inf
 //	Ceil(NaN) = NaN
@@ -61,6 +63,7 @@ func Ceil(x float64) float64 {
 // Trunc returns the integer value of x.
 //
 // Special cases are:
+//
 //	Trunc(±0) = ±0
 //	Trunc(±Inf) = ±Inf
 //	Trunc(NaN) = NaN
@@ -68,13 +71,12 @@ func Trunc(x float64) float64 {
 	return math.Trunc(x)
 }
 
-// NaN returns an IEEE 754 ``not-a-number'' value.
+// NaN returns an IEEE 754 “not-a-number” value.
 func NaN() float64 {
 	return math.NaN()
 }
 
-
-// IsNaN reports whether f is an IEEE 754 ``not-a-number'' value.
+// IsNaN reports whether f is an IEEE 754 “not-a-number” value.
 func IsNaN(f float64) bool {
 	return math.IsNaN(f)
 }
