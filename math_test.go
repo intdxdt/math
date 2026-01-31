@@ -1,9 +1,10 @@
 package math
 
 import (
-	"github.com/franela/goblin"
 	"math"
 	"testing"
+
+	"github.com/franela/goblin"
 )
 
 const precision = 8

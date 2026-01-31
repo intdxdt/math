@@ -8,3 +8,5 @@ github.com/intdxdt/twiddle v1.0.2 h1:T4F7rO18mboiGl2oZ1aJmkXukRtHRIhI/82E/nPnQp8
 github.com/intdxdt/twiddle v1.0.2/go.mod h1:KdjoNnWd3ftAqvwFDwHGTWHQ/CfKShr4xeFE+YWHmlo=
 golang.org/x/exp v0.0.0-20241004190924-225e2abe05e6 h1:1wqE9dj9NpSm04INVsJhhEUzhuDVjbcyKH91sVyPATw=
 golang.org/x/exp v0.0.0-20241004190924-225e2abe05e6/go.mod h1:NQtJDoLvd6faHhE7m4T/1IY708gDefGGjR/iUW8yQQ8=
+golang.org/x/exp v0.0.0-20260112195511-716be5621a96 h1:Z/6YuSHTLOHfNFdb8zVZomZr7cqNgTJvA8+Qz75D8gU=
+golang.org/x/exp v0.0.0-20260112195511-716be5621a96/go.mod h1:nzimsREAkjBCIEFtHiYkrJyT+2uy9YZJB7H1k68CXZU=
